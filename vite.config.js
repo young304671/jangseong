@@ -12,6 +12,8 @@ export default defineConfig({
         caseDetail: resolve(import.meta.dirname, 'cases/detail/index.html'),
         guide: resolve(import.meta.dirname, 'care-guide/index.html'),
         guideDetail: resolve(import.meta.dirname, 'care-guide/detail/index.html'),
+        blog: resolve(import.meta.dirname, 'blog/index.html'),
+        seasonalPost: resolve(import.meta.dirname, 'blog/summer-check/index.html'),
         reviews: resolve(import.meta.dirname, 'reviews-faq/index.html'),
         contact: resolve(import.meta.dirname, 'contact/index.html'),
       },
