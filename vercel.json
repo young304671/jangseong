@@ -2,5 +2,23 @@
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/car-care/", "destination": "/api/board-page?path=/car-care/" },
+    { "source": "/car-care/:slug/", "destination": "/api/board-page?path=/car-care/:slug/" },
+    { "source": "/repair-cases/", "destination": "/api/board-page?path=/repair-cases/" },
+    { "source": "/repair-cases/:slug/", "destination": "/api/board-page?path=/repair-cases/:slug/" },
+    { "source": "/news/", "destination": "/api/board-page?path=/news/" },
+    { "source": "/news/:slug/", "destination": "/api/board-page?path=/news/:slug/" },
+    { "source": "/faq/", "destination": "/api/board-page?path=/faq/" },
+    { "source": "/care-guide/", "destination": "/api/board-page?path=/car-care/" },
+    { "source": "/cases/", "destination": "/api/board-page?path=/repair-cases/" },
+    { "source": "/sitemap.xml", "destination": "/api/board-sitemap" }
+  ],
+  "functions": {
+    "api/board-page.js": { "maxDuration": 30, "includeFiles": "dist/car-care/index.html" },
+    "api/booking.js": {
+      "maxDuration": 60
+    }
+  }
 }

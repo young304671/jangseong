@@ -1,1 +1,1 @@
-{"type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","typescript":"latest"},"devDependencies":{}}
+{"type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build"},"dependencies":{"@supabase/supabase-js":"2.117.2","@vitejs/plugin-react":"latest","google-auth-library":"^11.1.0","typescript":"latest","vite":"latest"}}
