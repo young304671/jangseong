@@ -16,7 +16,7 @@
     { "source": "/sitemap.xml", "destination": "/api/board-sitemap" }
   ],
   "functions": {
-    "api/board-page.js": { "maxDuration": 30, "includeFiles": "dist/car-care/index.html" },
+    "api/board-page.js": { "maxDuration": 30, "includeFiles": "dist/board-shell.html" },
     "api/booking.js": {
       "maxDuration": 60
     }

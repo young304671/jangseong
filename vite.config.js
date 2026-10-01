@@ -1,7 +1,18 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
+import { copyFile, unlink } from 'node:fs/promises';
 
 export default defineConfig({
+  plugins: [{
+    name: 'server-rendered-board-routes',
+    async closeBundle() {
+      await copyFile('dist/car-care/index.html', 'dist/board-shell.html');
+      // Vercel serves existing static files before list rewrites.
+      for (const path of ['car-care/index.html', 'repair-cases/index.html', 'news/index.html', 'faq/index.html', 'care-guide/index.html', 'cases/index.html', 'sitemap.xml']) {
+        await unlink(`dist/${path}`).catch(error => { if (error.code !== 'ENOENT') throw error; });
+      }
+    },
+  }],
   build: {
     rollupOptions: {
       input: {

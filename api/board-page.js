@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   try { data = await serverBoardData(route); if (route.slug && !data.post) status = 404; }
   catch { data = { error: true }; status = 503; res.setHeader('Retry-After', '60'); }
   try {
-    const template = await readFile(new URL('../dist/car-care/index.html', import.meta.url), 'utf8');
+    const template = await readFile(new URL('../dist/board-shell.html', import.meta.url), 'utf8');
     const html = template.replace(/<title>[\s\S]*?<\/title>/, boardMetadata(route, data))
       .replace('<div id="app"></div>', `<div id="app">${renderBoard(route, data)}</div><script>window.__BOARD_DATA__=${JSON.stringify(data).replace(/</g, '\\u003c')};</script>`);
     return res.status(status).send(html);
