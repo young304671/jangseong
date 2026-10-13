@@ -40,3 +40,15 @@
 .story .story-copy blockquote{font-size:clamp(16px,1.65vw,20px);line-height:1.7;padding:14px 18px;}
 @media(max-width:680px){.story{grid-template-columns:1fr;gap:32px;}.story .story-photo{max-width:310px;}.story-copy h2{font-size:clamp(27px,7vw,38px);letter-spacing:-1.3px;}.story-copy .eyebrow{letter-spacing:.06em;}.story .story-copy blockquote{padding:12px;font-size:16px;}}
 
+
+/* Contact and location information. */
+.contact-location{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(30px,5vw,70px);align-items:start;}
+.contact-location>div{min-width:0;}.contact-location .contact-dl{word-break:keep-all;overflow-wrap:break-word;}
+.contact-location dd p{margin:0 0 16px;line-height:1.8;}.contact-location dd p:last-child{margin-bottom:0;}
+.contact-location .contact-phone{background:var(--navy);color:#fff;}
+.location-map h3{margin:0 0 18px;color:var(--navy);font-size:22px;}
+.location-map iframe{display:block;width:100%;height:420px;border:1px solid var(--line);border-radius:8px;background:var(--pale);}
+.location-map>p{font-size:14px;color:var(--muted);word-break:keep-all;}.location-map .btn{max-width:100%;}
+#contact-info,#booking{scroll-margin-top:100px;}
+@media(max-width:680px){.contact-location{grid-template-columns:1fr;gap:40px;}.location-map iframe{height:340px;}.contact-location .actions{gap:10px;}.contact-location .btn{padding:0 16px;}}
+
