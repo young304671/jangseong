@@ -52,3 +52,10 @@
 #contact-info,#booking{scroll-margin-top:100px;}
 @media(max-width:680px){.contact-location{grid-template-columns:1fr;gap:40px;}.location-map iframe{height:340px;}.contact-location .actions{gap:10px;}.contact-location .btn{padding:0 16px;}}
 
+
+/* Home introduction and its consultation link only. */
+.home-hero .hero-description{max-width:540px;margin:24px 0 0;line-height:1.8;word-break:keep-all;overflow-wrap:break-word;color:#fff;text-shadow:0 2px 8px #041b35;}
+body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
+@media(max-width:1200px){body:has(.home-hero) .top-call{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;margin-left:8px;}}
+@media(max-width:680px){.home-hero .hero-description{max-width:34em;margin-top:20px;}body:has(.home-hero) .nav{gap:6px;}body:has(.home-hero) .top-call{font-size:13px;padding:9px 10px;margin-left:0;}body:has(.home-hero) .menu{padding:8px;}}
+@media(max-width:360px){body:has(.home-hero) .brand{gap:6px;font-size:22px;}body:has(.home-hero) .brand-logo{width:34px;height:34px;}body:has(.home-hero) .brand small{font-size:7.5px;}}
