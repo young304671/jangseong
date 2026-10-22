@@ -79,7 +79,7 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 @media(max-width:680px){.home-hero .hero-services a{margin-block:0;}}
 
 /* Electric vehicle guidance, scoped to its two new panels. */
-.ev-banner,.ev-panel{background:#fff9ef;border:1px solid #f1dfc5;border-left:4px solid var(--orange);color:var(--navy);border-radius:8px;display:flex;align-items:center;gap:24px;padding:28px 30px;word-break:keep-all;overflow-wrap:break-word;}
+.ev-banner{background:#fff9ef;border:1px solid #f1dfc5;border-left:4px solid var(--orange);color:var(--navy);border-radius:8px;display:flex;align-items:center;gap:24px;padding:28px 30px;word-break:keep-all;overflow-wrap:break-word;}
 .ev-banner{margin-top:24px;}
 .ev-icon{flex:0 0 56px;line-height:0;color:var(--navy);}
 .ev-icon svg{display:block;width:56px;height:56px;}
@@ -90,8 +90,5 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .ev-banner .ev-link{flex-shrink:0;border-color:var(--orange);gap:14px;padding:10px 18px;white-space:nowrap;}
 .ev-link:hover,.ev-link:focus-visible{text-decoration:underline;text-underline-offset:4px;}
 .ev-link:focus-visible{outline:2px solid var(--navy);outline-offset:4px;}
-.ev-service{scroll-margin-top:110px;padding-top:0;}
-.ev-panel{align-items:flex-start;padding:40px;}
-.ev-panel h2{font-size:clamp(28px,3vw,38px);line-height:1.35;margin:0 0 18px;letter-spacing:-1px;}
 @media(max-width:800px){.ev-banner{flex-direction:column;align-items:flex-start;gap:18px;}.ev-banner .ev-link{white-space:normal;max-width:100%;}}
-@media(max-width:680px){.ev-banner,.ev-panel{padding:24px 20px;gap:18px;}.ev-panel{flex-direction:column;}.ev-panel .actions{gap:10px;}.ev-panel .btn{padding:0 16px;}}
+@media(max-width:680px){.ev-banner{padding:24px 20px;gap:18px;}}
