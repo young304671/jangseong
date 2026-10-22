@@ -59,3 +59,14 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 @media(max-width:1200px){body:has(.home-hero) .top-call{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;margin-left:8px;}}
 @media(max-width:680px){.home-hero .hero-description{max-width:34em;margin-top:20px;}body:has(.home-hero) .nav{gap:6px;}body:has(.home-hero) .top-call{font-size:13px;padding:9px 10px;margin-left:0;}body:has(.home-hero) .menu{padding:8px;}}
 @media(max-width:360px){body:has(.home-hero) .brand{gap:6px;font-size:22px;}body:has(.home-hero) .brand-logo{width:34px;height:34px;}body:has(.home-hero) .brand small{font-size:7.5px;}}
+
+/* Homepage maintenance cards. */
+.home-service-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+.home-service-grid article{display:flex;flex-direction:column;min-width:0;height:auto;word-break:keep-all;overflow-wrap:break-word;}
+.home-service-grid .service-icon{display:flex;align-items:center;height:44px;color:var(--navy);}
+.home-service-grid .service-icon svg{display:block;width:44px;height:44px;}
+.home-service-grid h3{margin:22px 0 12px;line-height:1.5;}
+.home-service-grid .service-description{margin:0 0 24px;line-height:1.8;}
+.home-service-grid article>a{align-self:flex-start;margin-top:auto;line-height:1.65;}
+@media(max-width:1000px){.home-service-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:680px){.home-service-grid{grid-template-columns:minmax(0,1fr);}.home-service-grid article{min-height:0;padding:28px;}}
