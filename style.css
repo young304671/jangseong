@@ -92,3 +92,14 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .ev-link:focus-visible{outline:2px solid var(--navy);outline-offset:4px;}
 @media(max-width:800px){.ev-banner{flex-direction:column;align-items:flex-start;gap:18px;}.ev-banner .ev-link{white-space:normal;max-width:100%;}}
 @media(max-width:680px){.ev-banner{padding:24px 20px;gap:18px;}}
+
+/* Photos for the home principles and about gallery only. */
+.principle-photo{margin:0;min-width:0;align-self:center;}
+.principle-photo img{display:block;width:100%;height:auto;border-radius:10px;}
+.garage-daily .center-head{word-break:keep-all;overflow-wrap:break-word;}
+.garage-daily .center-head>p:not(.eyebrow){color:#d7e2ed;}
+.garage-photos{display:grid;grid-template-columns:1.65fr 1fr 1fr;gap:24px;align-items:start;}
+.garage-photos figure{margin:0;min-width:0;}
+.garage-photos img{display:block;width:100%;height:auto;border-radius:8px;}
+.garage-photos figcaption{color:#fff;font-size:14px;line-height:1.7;margin-top:14px;word-break:keep-all;overflow-wrap:break-word;}
+@media(max-width:800px){.garage-photos{grid-template-columns:1fr;gap:32px;}}
