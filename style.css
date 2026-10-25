@@ -49,6 +49,7 @@
 .location-map h3{margin:0 0 18px;color:var(--navy);font-size:22px;}
 .location-map iframe{display:block;width:100%;height:420px;border:1px solid var(--line);border-radius:8px;background:var(--pale);}
 .location-map>p{font-size:14px;color:var(--muted);word-break:keep-all;}.location-map .btn{max-width:100%;}
+.visit .two-col>div{min-width:0;}.visit dd{overflow-wrap:break-word;}.visit dd p{margin:0 0 16px;}.visit dd p:last-child{margin-bottom:0;}
 #contact-info,#booking{scroll-margin-top:100px;}
 @media(max-width:680px){.contact-location{grid-template-columns:1fr;gap:40px;}.location-map iframe{height:340px;}.contact-location .actions{gap:10px;}.contact-location .btn{padding:0 16px;}}
 
