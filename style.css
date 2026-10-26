@@ -77,6 +77,15 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 @media(max-width:360px){body:has(.home-hero) .brand{gap:6px;font-size:22px;}body:has(.home-hero) .brand-logo{width:34px;height:34px;}body:has(.home-hero) .brand small{font-size:7.5px;}}
 
 /* Homepage maintenance cards. */
+.maintenance-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);align-items:center;gap:40px;}
+.maintenance-guidance{display:flex;align-items:center;gap:22px;padding:28px;background:#fff8ed;border-radius:16px;min-width:0;}
+.maintenance-guidance-icon{color:var(--orange);width:64px;height:64px;flex:0 0 64px;}
+.maintenance-guidance-copy{border-left:1px solid #e8a15c;padding-left:22px;min-width:0;word-break:keep-all;overflow-wrap:break-word;}
+.maintenance-guidance-copy p{margin:0;color:var(--navy);font-size:18px;font-weight:800;line-height:1.8;}
+.maintenance-guidance-copy p:first-child{color:var(--orange);font-size:20px;}
+.maintenance-guidance-copy p+p{margin-top:10px;}
+@media(max-width:1000px){.maintenance-intro{grid-template-columns:minmax(0,1fr);gap:24px;}.maintenance-guidance{max-width:100%;}}
+@media(max-width:680px){.maintenance-guidance{gap:14px;padding:22px 18px;border-radius:12px;}.maintenance-guidance-icon{width:44px;height:44px;flex-basis:44px;}.maintenance-guidance-copy{padding-left:14px;}.maintenance-guidance-copy p{font-size:16px;line-height:1.75;}.maintenance-guidance-copy p:first-child{font-size:18px;}.maintenance-guidance-copy p+p{margin-top:10px;}}
 .home-service-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 .home-service-grid article{display:flex;flex-direction:column;min-width:0;height:auto;word-break:keep-all;overflow-wrap:break-word;}
 .home-service-grid .service-icon{display:flex;align-items:center;height:44px;color:var(--navy);}
