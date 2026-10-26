@@ -6,6 +6,7 @@ import { getBoardData, initSearch, initHomeBoards, updateBoardMeta } from './boa
 import { adminShell, initAdmin } from './board-admin.js';
 import './style.css';
 import blogListSource from './blog/index.html?raw';
+import { initBlogCategories } from './blog-categories.js';
 import blogDetailSource from './blog/summer-check/index.html?raw';
 const blogList=()=>blogListSource.match(/<main[\s\S]*?<\/main>/)[0];
 const blogDetail=()=>blogDetailSource.match(/<main[\s\S]*?<\/main>/)[0];
@@ -75,6 +76,7 @@ const pages={blog:blogList,'blog-detail':blogDetail,home,about,services:services
 const initialBoardData=window.__BOARD_DATA__;
 const initialMain=contentRoute?.admin ? adminShell() : contentRoute ? (initialBoardData ? renderBoard(contentRoute,initialBoardData) : '<main id="main"><section><div class="wrap"><p role="status">콘텐츠를 불러오고 있습니다.</p></div></section></main>') : pages[page]();
 document.querySelector('#app').innerHTML=header()+initialMain+footer();
+if(page==='blog') initBlogCategories();
 document.querySelector('.menu').addEventListener('click',e=>{const b=e.currentTarget; b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true')});
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{await navigator.clipboard?.writeText(b.dataset.copy); b.textContent='복사됨'}));
 document.querySelectorAll('.filter-row button,.category-list button').forEach(b=>b.addEventListener('click',()=>{b.parentElement.querySelector('.active')?.classList.remove('active');b.classList.add('active')}));
