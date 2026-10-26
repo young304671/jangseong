@@ -11,17 +11,17 @@ const mobile=width<=800;const toggle=page.locator('.blog-category-toggle');
 if(mobile){assert.equal(await toggle.getAttribute('aria-expanded'),'false');assert.equal(await page.locator('#blog-category-nav').isVisible(),false);await toggle.click();}
 const buttons=page.locator('[data-category]');assert.equal(await buttons.count(),17);
 for(let i=0;i<await buttons.count();i++){
-const b=buttons.nth(i);const id=await b.getAttribute('data-category');const count=['all','care','seasonal-check'].includes(id)?1:0;
+const b=buttons.nth(i);const id=await b.getAttribute('data-category');const count=({all:2,care:1,'seasonal-check':1,repair:1,'engine-oil':1})[id]||0;
 assert.equal(await b.locator('small').textContent(),String(count));await b.click();
 assert.equal(await b.getAttribute('aria-pressed'),'true');assert.equal(await page.locator('.blog-card:visible').count(),count);assert.equal(await page.locator('.blog-empty').isVisible(),count===0);
 }
 await page.locator('[data-category=all]').click();
-assert.equal(await page.locator('.blog-card').getAttribute('href'),'/blog/summer-check/');
+assert.equal(await page.locator('.blog-card[href="/blog/summer-check/"]').getAttribute('href'),'/blog/summer-check/');
 const bounds=await page.evaluate(()=>{const a=document.querySelector('.blog-categories').getBoundingClientRect(),b=document.querySelector('.blog-list').getBoundingClientRect();return {side:a.right<=b.left,above:a.bottom<=b.top,overflow:document.documentElement.scrollWidth>innerWidth};});
 assert.equal(bounds.overflow,false);assert(mobile?bounds.above:bounds.side);
 if(mobile){await toggle.click();assert.equal(await page.locator('#blog-category-nav').isVisible(),false);await toggle.click();}
 await page.locator('.blog-layout').screenshot({path:`verification/blog/${base.includes('127.')?'local':'production'}-${width}.png`});
-await page.locator('.blog-card').click();await page.waitForURL('**/blog/summer-check/');assert(await page.locator('h1').innerText());
+await page.locator('.blog-card[href="/blog/summer-check/"]').click();await page.waitForURL('**/blog/summer-check/');assert(await page.locator('h1').innerText());
 console.log(width,JSON.stringify(bounds),'17 categories passed');
 }
 if(base.includes('127.')){

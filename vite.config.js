@@ -22,6 +22,7 @@ export default defineConfig({
         boardFaq: resolve(import.meta.dirname, 'faq/index.html'),
         boardAdmin: resolve(import.meta.dirname, 'admin/index.html'),
         blog: resolve(import.meta.dirname, 'blog/index.html'),
+        oilCheck: resolve(import.meta.dirname, 'blog/engine-oil-basic-check/index.html'),
         blogDetail: resolve(import.meta.dirname, 'blog/summer-check/index.html'),
         home: resolve(import.meta.dirname, 'index.html'),
         about: resolve(import.meta.dirname, 'about/index.html'),
