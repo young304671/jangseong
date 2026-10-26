@@ -8,6 +8,21 @@
 .blog-list{padding:64px 0 100px}.blog-card{border:1px solid var(--line);border-radius:14px;grid-template-columns:320px 1fr;align-items:center;gap:36px;display:grid;overflow:hidden}.blog-card img{object-fit:cover;width:100%;height:100%;min-height:260px}.blog-card>div{padding:25px 35px 25px 0}.blog-card h2{margin:0 0 12px;font-size:clamp(25px,3vw,36px);line-height:1.3}.blog-card p:not(.eyebrow){color:var(--muted)}.blog-card span{color:var(--navy);font-weight:800}.blog-article{max-width:920px;padding:42px 0 90px}.blog-breadcrumb{color:var(--muted);margin-bottom:35px;font-size:14px}.blog-breadcrumb a{text-decoration:underline}.blog-title{border-bottom:1px solid var(--line);padding:0 0 40px}.blog-title h1{letter-spacing:-2px;margin:0 0 18px;font-size:clamp(34px,5vw,52px);line-height:1.22}.blog-title>p:last-child{color:var(--muted);margin:0;font-size:19px}.blog-body{word-break:keep-all;max-width:760px;margin:40px auto 0;font-size:18px;line-height:1.9}.blog-body>p{margin:0 0 24px}.blog-body section{border-bottom:1px solid var(--line);padding:40px 0 20px}.blog-body h2{letter-spacing:-1px;margin:0 0 22px;font-size:29px;line-height:1.35}.blog-body section p{margin:0 0 20px}.blog-body figure{text-align:center;margin:27px 0 14px}.blog-body figure img{border-radius:8px;width:auto;max-width:100%;max-height:740px;margin:auto;display:block}.blog-body figure figcaption{color:var(--muted);margin-top:6px;font-size:13px}.blog-body .source{color:var(--muted);font-size:14px}.blog-body .source a,.blog-body .original a{color:var(--navy);text-decoration:underline}.blog-body .blog-principle{background:var(--pale);border:0;border-radius:12px;margin:42px 0;padding:34px}.blog-principle .btn{margin-top:8px;font-size:16px}.blog-body .original{color:var(--muted);font-size:14px}.blog-back a{color:var(--navy);font-weight:800}@media (width<=680px){.blog-card{grid-template-columns:1fr;gap:0}.blog-card img{height:230px;min-height:0}.blog-card>div{padding:25px}.blog-article{padding-top:28px}.blog-title h1 br{display:none}.blog-title>p:last-child,.blog-body{font-size:16px}.blog-body h2{font-size:24px}.blog-body .blog-principle{margin:35px 0;padding:24px}}
 .brand .brand-name{color:var(--navy)}
 
+/* Footer-only typography and responsive spacing. */
+footer .footer-grid{grid-template-columns:minmax(0,1.65fr) minmax(0,.8fr) minmax(0,.9fr) minmax(0,1.2fr);gap:32px}
+footer .footer-grid>div{min-width:0}
+footer .brand.invert{display:inline-flex;gap:12px;margin:0 0 14px;font-size:30px;line-height:1.25;letter-spacing:.2px}
+footer .brand .brand-name{color:#fff}
+footer .brand-logo{width:56px;height:56px}
+footer .brand small{display:block;margin-top:6px;font-size:9px;letter-spacing:.6px}
+footer .footer-tagline{margin:0 0 20px;font-size:17px;line-height:1.8;letter-spacing:.1px;word-break:keep-all}
+footer .footer-address{font-size:14px;line-height:1.9;word-break:keep-all;color:#b4c5d5}
+footer .footer-phone{width:fit-content;font-size:22px;font-weight:800;line-height:1.5;letter-spacing:.3px}
+footer .footer-hours{font-size:14px;line-height:1.9;color:#d1dce7}
+footer a:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+@media(max-width:1200px){footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px}}
+@media(max-width:680px){footer .footer-grid{grid-template-columns:minmax(0,1fr);gap:28px}footer .brand.invert{font-size:28px;gap:10px}footer .brand-logo{width:52px;height:52px}footer .footer-tagline{font-size:16px}footer .footer-grid h3{margin-top:0}}
+
 /* Homepage photograph: original attachment, with responsive positioning. */
 .home-hero{padding:0;min-height:640px;background:linear-gradient(90deg,rgba(4,27,53,.72),rgba(4,27,53,.18) 56%,transparent 78%),url('/images/jeju-coastal-suv.png') center 70%/cover no-repeat;}
 .home-hero .hero-content{padding:100px 0;}
