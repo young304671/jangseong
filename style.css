@@ -153,3 +153,87 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .customer-review .review-attribution{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;font-size:13px;color:var(--muted)}
 .customer-review .review-attribution strong{color:var(--navy);font-size:14px}
 .more-reviews{text-align:center;margin-top:32px}.more-reviews summary{display:inline-flex;align-items:center;gap:20px;list-style:none;cursor:pointer;padding:13px 25px;border:1px solid var(--navy);border-radius:5px;color:var(--navy);font-weight:700;background:#fff}.more-reviews summary::-webkit-details-marker{display:none}.more-reviews summary:hover{background:var(--pale)}.more-reviews summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.more-reviews[open] summary span{transform:rotate(90deg)}.extra-reviews{margin-top:30px}
+
+/* Desktop secondary pages: align scale with the homepage. */
+@media (min-width:1025px){
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header{height:100px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .wrap,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .wrap,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .final-cta .wrap{width:min(calc(100% - 144px),1900px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav{gap:clamp(14px,1.4vw,30px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav nav{gap:clamp(10px,1.3vw,26px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav nav a{font-size:clamp(18px,1.15vw,24px);white-space:nowrap}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand{font-size:clamp(27px,1.75vw,36px);letter-spacing:2px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand-logo{width:52px;height:52px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand small{font-size:clamp(11px,.72vw,14px);letter-spacing:.25px;line-height:1.2}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .top-call{font-size:clamp(20px,1.2vw,25px);padding:18px 26px;white-space:nowrap}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .wrap:not(.blog-article):not(.board-detail){width:min(calc(100% - 200px),1760px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main{font-size:clamp(21px,1.22vw,25px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main p,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main dd,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main dt,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main li{font-size:clamp(21px,1.22vw,25px);line-height:1.75;word-break:keep-all}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .page-hero{padding:110px 0}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .page-hero h1{font-size:clamp(60px,4.3vw,88px);line-height:1.2;letter-spacing:-2px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .page-hero .wrap>p:last-child{max-width:1000px;font-size:clamp(23px,1.5vw,30px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .eyebrow{font-size:17px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .section-head h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .center-head h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .two-col h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .faq-layout h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .contact-grid h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .form-layout h2{font-size:clamp(46px,3.2vw,66px);line-height:1.25}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-title h2{font-size:clamp(38px,2.6vw,52px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-grid h3{font-size:clamp(21px,1.3vw,26px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-grid p{font-size:clamp(19px,1.1vw,22px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-grid>div{padding:26px;min-width:0;overflow-wrap:anywhere}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-title>span{font-size:64px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .btn,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .final-cta .btn{min-height:66px;padding:0 30px;font-size:20px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .faq summary{font-size:clamp(23px,1.4vw,29px);line-height:1.5;gap:20px;padding:24px 4px;align-items:center}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .faq summary span{font-size:1.15em;flex-shrink:0}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .customer-review blockquote{font-size:clamp(21px,1.3vw,26px);line-height:1.7}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .customer-review .review-attribution,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .customer-review .review-attribution strong{font-size:17px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-tabs a,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-category,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .filter-row button{font-size:19px;padding:14px 23px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-card h3,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-card h2{font-size:clamp(28px,1.8vw,37px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-card time,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-more,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-breadcrumb{font-size:18px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-article{max-width:1120px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-body{max-width:920px;font-size:22px;line-height:1.9}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-body h2,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-content h2{font-size:clamp(30px,2vw,40px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-title h1,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-detail h1{font-size:clamp(44px,3vw,62px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .board-detail{max-width:1100px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main label,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main input,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main select,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main textarea{font-size:20px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .final-cta h2{font-size:clamp(45px,3vw,60px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .final-cta p{font-size:clamp(21px,1.2vw,24px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .footer-grid h3{font-size:25px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .footer-grid a,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .footer-grid p,
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .footer-hours{font-size:20px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .brand .brand-name{letter-spacing:4px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) footer .brand small{letter-spacing:.25px}
+}
+@media(min-width:1500px){
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header{height:120px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand-logo{width:62px;height:62px}
+}
+@media(min-width:1025px) and (max-width:1300px){
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .wrap{width:calc(100% - 40px)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav{gap:10px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav nav{gap:10px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .nav nav a{font-size:15px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand{font-size:22px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand-logo{width:40px;height:40px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) .top-call{font-size:15px;padding:12px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
