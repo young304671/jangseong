@@ -139,3 +139,9 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .garage-photos img{display:block;width:100%;height:auto;border-radius:8px;}
 .garage-photos figcaption{color:#fff;font-size:14px;line-height:1.7;margin-top:14px;word-break:keep-all;overflow-wrap:break-word;}
 @media(max-width:800px){.garage-photos{grid-template-columns:1fr;gap:32px;}}
+
+/* Keep engine-oil articles beside the booking action on every screen size. */
+.oil-service-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
+.oil-service-actions .oil-related-link{border-color:#d3dde6;background:#fff}
+.oil-service-actions .oil-related-link:hover,.oil-service-actions .oil-related-link:focus-visible{border-color:var(--orange);color:var(--orange)}
+@media(max-width:680px){.oil-service-actions{align-items:stretch}.oil-service-actions .btn{width:100%;justify-content:space-between}}
