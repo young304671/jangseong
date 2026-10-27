@@ -84,6 +84,7 @@ const socialShortcuts = `<style>
 .social-shortcuts a:hover,.social-shortcuts a:focus-visible{transform:scale(1.08);outline:3px solid #ff7a00;outline-offset:2px}
 .social-shortcuts .naver{background:#03c75a;font-size:25px}.social-shortcuts .instagram{background:linear-gradient(35deg,#f9ce34,#ee2a7b,#6228d7)}.social-shortcuts .daangn{background:#ff6f0f;font-size:13px}.social-shortcuts .mycle{background:#2764e9;font-size:12px}.social-shortcuts .kakao{background:#fee500;color:#301d1c;font-size:12px}
 .social-shortcuts svg{width:27px;height:27px}.social-shortcuts .daangn,.social-shortcuts .mycle,.social-shortcuts .kakao{background:#f5f5f5;overflow:hidden}.social-shortcuts .daangn img,.social-shortcuts .mycle img,.social-shortcuts .kakao img{display:block;width:76%;height:76%;object-fit:contain;border-radius:0}
+.social-shortcuts .kakao{background:#f5e43b}.social-shortcuts .kakao img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 @media(max-width:800px){.social-shortcuts{position:static;transform:none;flex-direction:row;justify-content:center;gap:10px;padding:12px 12px;background:#fff}.social-shortcuts a{width:44px;height:44px;flex:0 0 44px}.social-shortcuts .daangn,.social-shortcuts .mycle,.social-shortcuts .kakao{font-size:11px}}
 </style><nav class="social-shortcuts" aria-label="장성카센터 외부 채널 바로가기">
 <a class="naver" href="https://naver.me/xjYZUjWZ" target="_blank" rel="noopener noreferrer" aria-label="네이버 플레이스 (새 창)" title="네이버 플레이스">N</a>
