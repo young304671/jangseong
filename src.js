@@ -78,7 +78,20 @@ function contact(){return `<main id="main">${hero('CONTACT & LOCATION','방문 �
 const pages={'oil-interval':()=>oilIntervalSource.match(/<main[\s\S]*?<\/main>/)[0],'oil-check':()=>oilCheckSource.match(/<main[\s\S]*?<\/main>/)[0],blog:blogList,'blog-detail':blogDetail,home,about,services:servicesPage,cases,'case-detail':caseDetail,guide,'guide-detail':guideDetail,reviews,contact};
 const initialBoardData=window.__BOARD_DATA__;
 const initialMain=contentRoute?.admin ? adminShell() : contentRoute ? (initialBoardData ? renderBoard(contentRoute,initialBoardData) : '<main id="main"><section><div class="wrap"><p role="status">콘텐츠를 불러오고 있습니다.</p></div></section></main>') : pages[page]();
-document.querySelector('#app').innerHTML=header()+initialMain+footer();
+const socialShortcuts = `<style>
+.social-shortcuts{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:9px}
+.social-shortcuts a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 3px 12px #10263d35;border:2px solid #fff;text-align:center;line-height:1.1;transition:transform .15s}
+.social-shortcuts a:hover,.social-shortcuts a:focus-visible{transform:scale(1.08);outline:3px solid #ff7a00;outline-offset:2px}
+.social-shortcuts .naver{background:#03c75a;font-size:25px}.social-shortcuts .instagram{background:linear-gradient(35deg,#f9ce34,#ee2a7b,#6228d7)}.social-shortcuts .daangn{background:#ff6f0f;font-size:13px}.social-shortcuts .mycle{background:#2764e9;font-size:12px}.social-shortcuts .kakao{background:#fee500;color:#301d1c;font-size:12px}
+.social-shortcuts svg{width:25px;height:25px}
+@media(max-width:800px){.social-shortcuts{position:static;transform:none;flex-direction:row;justify-content:center;gap:10px;padding:12px 12px;background:#fff}.social-shortcuts a{width:44px;height:44px;flex:0 0 44px}.social-shortcuts .daangn,.social-shortcuts .mycle,.social-shortcuts .kakao{font-size:11px}}
+</style><nav class="social-shortcuts" aria-label="장성카센터 외부 채널 바로가기">
+<a class="naver" href="https://naver.me/xjYZUjWZ" target="_blank" rel="noopener noreferrer" aria-label="네이버 플레이스 (새 창)" title="네이버 플레이스">N</a>
+<a class="instagram" href="https://www.instagram.com/jang.seong_car" target="_blank" rel="noopener noreferrer" aria-label="인스타그램 (새 창)" title="인스타그램"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a class="daangn" href="https://www.daangn.com/kr/local-profile/%EC%9E%A5%EC%84%B1%EC%B9%B4%EC%84%BC%ED%84%B0-45k93r2ipy1h/" target="_blank" rel="noopener noreferrer" aria-label="당근 (새 창)" title="당근">당근</a>
+<a class="mycle" href="https://service.mycle.co.kr/v2/place/3pJY7" target="_blank" rel="noopener noreferrer" aria-label="마이클 (새 창)" title="마이클">마이클</a>
+<a class="kakao" href="https://pf.kakao.com/_LRvqG" target="_blank" rel="noopener noreferrer" aria-label="카카오톡 채널 (새 창)" title="카카오톡 채널">카카오</a></nav>`;
+document.querySelector('#app').innerHTML=header()+(page==='home'&&!contentRoute?socialShortcuts:'')+initialMain+footer();
 if(page==='blog') initBlogCategories();
 document.querySelector('.menu').addEventListener('click',e=>{const b=e.currentTarget; b.setAttribute('aria-expanded',b.getAttribute('aria-expanded')!=='true')});
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{await navigator.clipboard?.writeText(b.dataset.copy); b.textContent='복사됨'}));
