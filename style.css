@@ -145,3 +145,11 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .oil-service-actions .oil-related-link{border-color:#d3dde6;background:#fff}
 .oil-service-actions .oil-related-link:hover,.oil-service-actions .oil-related-link:focus-visible{border-color:var(--orange);color:var(--orange)}
 @media(max-width:680px){.oil-service-actions{align-items:stretch}.oil-service-actions .btn{width:100%;justify-content:space-between}}
+
+/* Customer reviews */
+.customer-review-grid .customer-review{display:flex;flex-direction:column;text-align:left;min-height:245px;padding:30px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(6,39,77,.05)}
+.customer-review .review-quote-mark{color:var(--orange);font-size:55px;font-weight:700;line-height:.9;margin-bottom:18px}
+.customer-review blockquote{margin:0 0 26px;color:var(--ink);font-size:17px;font-weight:700;line-height:1.75;word-break:keep-all}
+.customer-review .review-attribution{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;font-size:13px;color:var(--muted)}
+.customer-review .review-attribution strong{color:var(--navy);font-size:14px}
+.more-reviews{text-align:center;margin-top:32px}.more-reviews summary{display:inline-flex;align-items:center;gap:20px;list-style:none;cursor:pointer;padding:13px 25px;border:1px solid var(--navy);border-radius:5px;color:var(--navy);font-weight:700;background:#fff}.more-reviews summary::-webkit-details-marker{display:none}.more-reviews summary:hover{background:var(--pale)}.more-reviews summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.more-reviews[open] summary span{transform:rotate(90deg)}.extra-reviews{margin-top:30px}
