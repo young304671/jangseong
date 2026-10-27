@@ -237,3 +237,10 @@ body:not(:has(.home-page)):not(:has(.admin-wrap)) header .brand-logo{width:40px;
 body:not(:has(.home-page)):not(:has(.admin-wrap)) .top-call{font-size:15px;padding:12px}
 body:not(:has(.home-page)):not(:has(.admin-wrap)) main .detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+@media(min-width:1025px){
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-layout{grid-template-columns:280px minmax(0,1fr)}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-categories h2{font-size:22px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-categories nav button{font-size:18px;line-height:1.5;padding:12px 10px}
+body:not(:has(.home-page)):not(:has(.admin-wrap)) main .blog-categories nav button small{font-size:15px}
+}
