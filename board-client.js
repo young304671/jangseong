@@ -1,3 +1,4 @@
+import { withLocalCareArticles } from './local-care-articles.js';
 import { createClient } from '@supabase/supabase-js';
 import { categories, postCards, faqHtml, postUrl, safeImage } from './board-shared.js';
 export const supabase = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ? createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) : null;
@@ -9,7 +10,8 @@ export async function getBoardData(route) {
   if (error) throw error;
   return route.faq ? { faq: data } : route.slug ? { post: data } : { posts: data };
 }
-export function initSearch(posts) {
+export function initSearch(posts, category) {
+  if (category === "automotive-care") posts = withLocalCareArticles(posts);
   const input = document.querySelector('#board-search');
   input?.addEventListener('input', () => {
     const term = input.value.trim().toLocaleLowerCase();
