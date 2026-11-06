@@ -22,6 +22,7 @@ export default defineConfig({
         boardFaq: resolve(import.meta.dirname, 'faq/index.html'),
         boardAdmin: resolve(import.meta.dirname, 'admin/index.html'),
         blog: resolve(import.meta.dirname, 'blog/index.html'),
+        tireCracks: resolve(import.meta.dirname, 'blog/tire-cracks/index.html'),
         airconCheck: resolve(import.meta.dirname, 'blog/aircon-check/index.html'),
         batteryCheck: resolve(import.meta.dirname, 'blog/battery-check/index.html'),
         oilInterval: resolve(import.meta.dirname, 'blog/engine-oil-change-interval/index.html'),
