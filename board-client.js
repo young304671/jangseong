@@ -48,7 +48,8 @@ export async function initHomeBoards() {
       if (!supabase) throw new Error('unconfigured');
       const { data, error } = await supabase.from('posts').select('*').eq('published', true).eq('category', category).order('published_at', { ascending: false }).limit(3);
       if (error) throw error;
-      el.innerHTML = data.length ? postCards(data) : '<p>새로운 이야기를 준비하고 있습니다.</p>';
+      const posts = category === 'automotive-care' ? withLocalCareArticles(data).slice(0, 3) : data;
+      el.innerHTML = posts.length ? postCards(posts) : '<p>새로운 이야기를 준비하고 있습니다.</p>';
     } catch { el.innerHTML = `<p>지금은 글을 불러올 수 없습니다. <a href="/${categories[category].path}/">전체 보기 →</a></p>`; }
   }
   const faqElement = document.querySelector('[data-managed-faq]');
