@@ -65,7 +65,6 @@ const serviceIconPaths={
 };
 const serviceIconColors={oil:['#ffbd50','#ef7d23'],tire:['#d8e0e8','#34485f'],battery:['#f9cd51','#3f454b'],aircon:['#d9effa','#349ac4'],brake:['#e1e7ec','#e47c38'],basic:['#e0eff1','#55a89c'],'transmission-oil':['#fbe4ba','#e88c36'],lpg:['#dcecf1','#4d9aa8'],emissions:['#e5e9ed','#718496'],'electric-vehicle':['#dceddf','#67aa79'],'ev-reduction-oil':['#e1edcc','#94b864'],diagnostics:['#dceafa','#528bbd']};
 const serviceIllustration=(id)=>{
-  if(id==='battery') return `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="10" y="17" width="44" height="36" rx="2" fill="#4b4e50"/><rect x="14" y="22" width="36" height="26" fill="#373a3c"/><path d="M9 14h46v6H9z" fill="#f4c846"/><path d="M13 11h8v3h-8z" fill="#d76658"/><path d="M43 11h8v3h-8z" fill="#6da8ca"/><path d="M8 53h48v3H8z" fill="#393c3e"/><path d="M34 25 25 36h6l-3 9 12-14h-7z" fill="#f4c846"/></svg>`;
   const [bg,accent]=serviceIconColors[id]||['#e5edf2','#5789a8'];
   return `<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="4" y="4" width="56" height="56" rx="16" fill="${bg}"/><circle cx="48" cy="16" r="6" fill="${accent}" opacity=".8"/><g transform="translate(11 11) scale(1.6)" fill="none" stroke="${accent}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${serviceIconPaths[id]}</g></svg>`;
 };
