@@ -4,3 +4,5 @@
 
 .board-card img[src="/images/blog/tire-winter-pressure/cover.webp"],
 .board-card img[src="/images/blog/tire-replacement/cover.webp"] { object-position: top; }
+
+.board-gallery img[src="/board-images/tire-valve/6.webp"] { aspect-ratio: 1; object-fit: cover; object-position: center 65%; }

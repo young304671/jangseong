@@ -6,7 +6,7 @@ export const tireValveCase = {
   title: '공기압을 채워도 며칠 뒤 또 낮아진 타이어, 밸브 누설 점검·교체',
   summary: '공기압이 세 차례 낮아진 차량에서 공기 주입 밸브 주변의 누설과 밸브 스템 변형을 확인했습니다.',
   thumbnail_url: imagePath + 'cover.webp',
-  images: [1, 2, 3, 4, 5, 6].map(number => imagePath + number + '.webp'),
+  images: [1, 6, 2, 3, 4, 5].map(number => imagePath + number + '.webp'),
   content: [
     '## 공기압을 맞췄는데 며칠 뒤 다시 낮아졌습니다',
     '고객님은 다른 정비소에서 공기압을 맞췄지만 며칠 뒤 다시 낮아졌다며, 같은 증상이 이번이 세 번째라고 말씀하셨습니다.',
