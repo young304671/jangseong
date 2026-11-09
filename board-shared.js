@@ -20,7 +20,7 @@ export function boardTabs(active) {
   return `<nav class="board-tabs" aria-label="자동차관리 콘텐츠">${Object.entries(categories).map(([k, c]) => `<a href="/${c.path}/" ${k === active ? 'aria-current="page"' : ''}>${c.title}</a>`).join('')}<a href="/faq/" ${active === 'faq' ? 'aria-current="page"' : ''}>FAQ</a></nav>`;
 }
 export function postCards(posts) {
-  return `<div class="board-grid">${posts.map(p => `<article class="board-card"><a href="${postUrl(p)}"><img src="${escapeHtml(safeImage(p.thumbnail_url) || '/board-images/care.svg')}" alt="${escapeHtml(p.title)}" loading="lazy" width="640" height="400"><div class="board-card-body"><p class="eyebrow">${categories[p.category].title}</p><h3>${escapeHtml(p.title)}</h3><p>${escapeHtml(p.summary)}</p><time datetime="${escapeHtml(p.published_at || p.created_at)}">${dateLabel(p.published_at || p.created_at)}</time><span class="board-more">자세히 보기 →</span></div></a></article>`).join('')}</div>`;
+  return `<div class="board-grid">${posts.map(p => `<article class="board-card"><a href="${postUrl(p)}"><img src="${escapeHtml(p.category === 'automotive-care' && p.slug === 'tire-pressure' ? '/board-images/tire-pressure.webp' : safeImage(p.thumbnail_url) || '/board-images/care.svg')}" alt="${escapeHtml(p.title)}" loading="lazy" width="640" height="400"><div class="board-card-body"><p class="eyebrow">${categories[p.category].title}</p><h3>${escapeHtml(p.title)}</h3><p>${escapeHtml(p.summary)}</p><time datetime="${escapeHtml(p.published_at || p.created_at)}">${dateLabel(p.published_at || p.created_at)}</time><span class="board-more">자세히 보기 →</span></div></a></article>`).join('')}</div>`;
 }
 export function contentHtml(content) {
   // Plain text with Markdown headings; raw HTML is never interpreted.
