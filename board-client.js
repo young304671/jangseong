@@ -1,16 +1,18 @@
-import { konaBatteryCase, withKonaBatteryCase } from './kona-battery-case.js';
+import { tireValveCase } from './tire-valve-case.js';
+import { konaBatteryCase, withLocalRepairCases } from './kona-battery-case.js';
 import { withLocalCareArticles } from './local-care-articles.js';
 import { createClient } from '@supabase/supabase-js';
 import { categories, postCards, faqHtml, postUrl, safeImage } from './board-shared.js';
 export const supabase = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ? createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) : null;
 export async function getBoardData(route) {
   if (route.category === 'repair-case' && route.slug === konaBatteryCase.slug) return { post: konaBatteryCase };
+  if (route.category === 'repair-case' && route.slug === tireValveCase.slug) return { post: tireValveCase };
   if (!supabase) throw new Error('Supabase 환경변수가 설정되지 않았습니다.');
   let query = route.faq ? supabase.from('faq').select('*').eq('published', true).order('display_order').order('created_at') : supabase.from('posts').select('*').eq('published', true).eq('category', route.category).order('published_at', { ascending: false }).order('created_at', { ascending: false });
   if (route.slug) query = query.eq('slug', route.slug).maybeSingle();
   const { data, error } = await query;
   if (error) throw error;
-  return route.faq ? { faq: data } : route.slug ? { post: data } : { posts: route.category === 'repair-case' ? withKonaBatteryCase(data) : data };
+  return route.faq ? { faq: data } : route.slug ? { post: data } : { posts: route.category === 'repair-case' ? withLocalRepairCases(data) : data };
 }
 export function initSearch(posts, category) {
   if (category === "automotive-care") posts = withLocalCareArticles(posts);
@@ -50,7 +52,7 @@ export async function initHomeBoards() {
       if (!supabase) throw new Error('unconfigured');
       const { data, error } = await supabase.from('posts').select('*').eq('published', true).eq('category', category).order('published_at', { ascending: false }).limit(3);
       if (error) throw error;
-      const posts = category === 'automotive-care' ? withLocalCareArticles(data).slice(0, 3) : withKonaBatteryCase(data).slice(0, 3);
+      const posts = category === 'automotive-care' ? withLocalCareArticles(data).slice(0, 3) : withLocalRepairCases(data).slice(0, 3);
       el.innerHTML = posts.length ? postCards(posts) : '<p>새로운 이야기를 준비하고 있습니다.</p>';
     } catch { el.innerHTML = `<p>지금은 글을 불러올 수 없습니다. <a href="/${categories[category].path}/">전체 보기 →</a></p>`; }
   }

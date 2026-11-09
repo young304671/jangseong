@@ -1,3 +1,5 @@
+import { tireValveCase } from './tire-valve-case.js';
+
 const imagePath = '/board-images/kona-battery/';
 
 export const konaBatteryCase = {
@@ -17,6 +19,7 @@ export const konaBatteryCase = {
   ].join('\n\n'),
 };
 
-export function withKonaBatteryCase(posts = []) {
-  return [konaBatteryCase, ...posts.filter(post => post.slug !== konaBatteryCase.slug)];
+export function withLocalRepairCases(posts = []) {
+  const cases = [tireValveCase, konaBatteryCase];
+  return [...cases, ...posts.filter(post => !cases.some(entry => entry.slug === post.slug))];
 }
