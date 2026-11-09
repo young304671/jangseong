@@ -134,9 +134,9 @@ body:has(.home-hero) .top-call{white-space:nowrap;flex-shrink:0;}
 .principle-photo img{display:block;width:100%;height:auto;border-radius:10px;}
 .garage-daily .center-head{word-break:keep-all;overflow-wrap:break-word;}
 .garage-daily .center-head>p:not(.eyebrow){color:#d7e2ed;}
-.garage-photos{display:grid;grid-template-columns:1.65fr 1fr 1fr;gap:24px;align-items:start;}
+.garage-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start;}
 .garage-photos figure{margin:0;min-width:0;}
-.garage-photos img{display:block;width:100%;height:auto;border-radius:8px;}
+.garage-photos img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;}
 .garage-photos figcaption{color:#fff;font-size:14px;line-height:1.7;margin-top:14px;word-break:keep-all;overflow-wrap:break-word;}
 @media(max-width:800px){.garage-photos{grid-template-columns:1fr;gap:32px;}}
 
