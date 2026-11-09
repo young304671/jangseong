@@ -24,7 +24,7 @@ export const wallStory = {
   slug: 'a-sentence-on-our-wall',
   title: '장성카센터 벽에 걸린 한 문장',
   summary: '벽에 걸린 글귀와 두 손도장, 그리고 아들과 직원이 정비 교육을 다녀온 이야기입니다.',
-  thumbnail_url: '/board-images/wall-story/cover-tight.webp',
+  thumbnail_url: '/board-images/wall-story/cover-focused.webp',
   published_at: '2026-11-09T17:40:00+09:00',
   images: ['/board-images/wall-story/1001.webp', '/board-images/wall-story/1008.webp'],
   content: [
