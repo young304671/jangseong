@@ -1,4 +1,4 @@
-import { winterInspectionNews } from './winter-inspection-news.js';
+import { winterInspectionNews, wallStory } from './winter-inspection-news.js';
 import { tireValveCase } from './tire-valve-case.js';
 import { konaBatteryCase } from './kona-battery-case.js';
 import { airconArticle, tireCareArticles, withLocalCareArticles } from './local-care-articles.js';
@@ -9,6 +9,7 @@ export const categories = {
 };
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export function safeImage(value) {
+  if (value === wallStory.thumbnail_url || wallStory.images.includes(value)) return value;
   if (value === tireValveCase.thumbnail_url || tireValveCase.images.includes(value)) return value;
   if (value === konaBatteryCase.thumbnail_url || konaBatteryCase.images.includes(value)) return value;
   if (value === airconArticle.thumbnail_url || tireCareArticles.some(article => article.thumbnail_url === value)) return value;
