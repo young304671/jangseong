@@ -75,7 +75,7 @@ const serviceCards=(items)=>`<div class="service-grid home-service-grid">${items
 const serviceOverview=()=>serviceGroups.map(group=>`<div class="service-group" aria-labelledby="${group.id}-title"><div class="service-group-heading"><h2 id="${group.id}-title">${group.title}</h2><p>${group.description}</p></div>${serviceCards(group.services)}</div>`).join('');
 const serviceRelatedPosts = {
   oil: { title: '엔진오일 관련 글', html: '<p>교환 시기와 기본점검 내용을 확인해 보세요.</p><a href="/blog/engine-oil-change-interval/">엔진오일 교환 시기 알아보기 →</a><p><a href="/blog/engine-oil-basic-check/">엔진오일과 기본점검 알아보기 →</a></p>' },
-  brake: { title: '브레이크 관련 글', html: '<p>제동할 때 긁는 소리와 핸들 떨림이 있었던 차량의 실제 작업을 살펴보세요.</p><a href="/blog/brake-pad-disc-replacement/">브레이크 패드와 디스크 교체 후기 보기 →</a>' },
+  brake: { title: '브레이크 관련 글', html: '<p>제동할 때 긁는 소리와 핸들 떨림이 있었던 차량의 실제 작업을 살펴보세요.</p><a href="/blog/brake-pad-disc-replacement/">브레이크 관련 글보기 →</a>' },
   battery: { title: '배터리 관련 글', html: '<p>시동이 걸려도 배터리 상태를 점검해야 할까요?</p><a href="/blog/battery-check/">배터리 관련 글 보기 →</a>' },
   aircon: { title: '에어컨 관련 글', html: '<p>겨울철 에어컨 사용과 점검 방법을 알아보세요.</p><a href="/blog/aircon-check/">에어컨 관련 글 보기 →</a>' },
   tire: { title: '타이어 관련 글', html: '<p>타이어 홈과 균열, 공기압을 함께 확인해 보세요.</p><a href="/blog/tire-cracks/">타이어 관련 글 보기 →</a><p><a href="/blog/tire-replacement/">타이어 교체 시기 →</a></p><p><a href="/blog/tire-winter-pressure/">겨울철 공기압 경고등 →</a></p><p><a href="/car-care/tire-pressure/">타이어 공기압 안내 →</a></p>' },
