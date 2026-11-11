@@ -1,3 +1,4 @@
+import { k5BrakeCase } from './k5-brake-case.js';
 import { tireValveCase } from './tire-valve-case.js';
 
 const imagePath = '/board-images/kona-battery/';
@@ -20,6 +21,6 @@ export const konaBatteryCase = {
 };
 
 export function withLocalRepairCases(posts = []) {
-  const cases = [tireValveCase, konaBatteryCase];
+  const cases = [k5BrakeCase, tireValveCase, konaBatteryCase];
   return [...cases, ...posts.filter(post => !cases.some(entry => entry.slug === post.slug))];
 }
