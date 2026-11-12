@@ -5,7 +5,7 @@ export const k5CoolantCase = {
   slug: 'k5-coolant-exchange',
   title: '145,000km 주행한 K5, 순환식 냉각수 교환',
   summary: '냉각수 교환 시기가 된 K5에 고객님이 직접 준비해 오신 부동액을 사용해 순환식으로 교환했습니다.',
-  thumbnail_url: imagePath + 'case-cover.webp',
+  thumbnail_url: imagePath + 'case-cover-aligned.webp',
   images: ['customer-coolant.webp', 'filling-machine.webp', 'exchange-machine.webp', 'exchange-in-progress.webp'].map(name => imagePath + name),
   content: [
     '## 방문 이유',
