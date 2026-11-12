@@ -1,4 +1,5 @@
 import { winterInspectionNews, wallStory, withLocalNews } from './winter-inspection-news.js';
+import { k5CoolantCase } from './k5-coolant-case.js';
 import { k5BrakeCase } from './k5-brake-case.js';
 import { tireValveCase } from './tire-valve-case.js';
 import { konaBatteryCase, withLocalRepairCases } from './kona-battery-case.js';
@@ -9,6 +10,7 @@ export const supabase = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VIT
 export async function getBoardData(route) {
   if (route.category === 'news' && route.slug === wallStory.slug) return { post: wallStory };
   if (route.category === 'news' && route.slug === winterInspectionNews.slug) return { post: winterInspectionNews };
+  if (route.category === 'repair-case' && route.slug === k5CoolantCase.slug) return { post: k5CoolantCase };
   if (route.category === 'repair-case' && route.slug === k5BrakeCase.slug) return { post: k5BrakeCase };
   if (route.category === 'repair-case' && route.slug === konaBatteryCase.slug) return { post: konaBatteryCase };
   if (route.category === 'repair-case' && route.slug === tireValveCase.slug) return { post: tireValveCase };

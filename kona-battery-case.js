@@ -1,3 +1,4 @@
+import { k5CoolantCase } from './k5-coolant-case.js';
 import { k5BrakeCase } from './k5-brake-case.js';
 import { tireValveCase } from './tire-valve-case.js';
 
@@ -21,6 +22,6 @@ export const konaBatteryCase = {
 };
 
 export function withLocalRepairCases(posts = []) {
-  const cases = [k5BrakeCase, tireValveCase, konaBatteryCase];
+  const cases = [k5CoolantCase, k5BrakeCase, tireValveCase, konaBatteryCase];
   return [...cases, ...posts.filter(post => !cases.some(entry => entry.slug === post.slug))];
 }
