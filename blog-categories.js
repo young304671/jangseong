@@ -8,7 +8,7 @@ export const blogCategories = [
   { id: 'repair', label: '차량정비', children: [
     ['engine-oil', '엔진오일'], ['transmission-oil', '밋션오일'],
     ['brake', '브레이크'], ['noise', '자동차소음'], ['lpg-lpi', 'LPG/LPI차량'],
-    ['engine', '엔진'], ['electrical', '전장관리'],
+    ['engine', '엔진관리'], ['electrical', '전장관리'],
   ] },
   { id: 'care', label: '자동차관리', children: [
     ['aircon', '에어컨'], ['battery', '배터리'], ['tire', '타이어'],
