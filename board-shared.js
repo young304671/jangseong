@@ -3,7 +3,7 @@ import { k5CoolantCase } from './k5-coolant-case.js';
 import { k5BrakeCase } from './k5-brake-case.js';
 import { tireValveCase } from './tire-valve-case.js';
 import { konaBatteryCase } from './kona-battery-case.js';
-import { airconArticle, tireCareArticles, withLocalCareArticles } from './local-care-articles.js';
+import { airconArticle, linkedCareArticles, withLocalCareArticles } from './local-care-articles.js';
 export const categories = {
   'automotive-care': { path: 'car-care', title: '자동차관리', description: '운전자라면 알아두면 좋은 자동차 관리 이야기' },
   'repair-case': { path: 'repair-cases', title: '정비사례', description: '실제 점검과 정비 과정을 소개합니다' },
@@ -17,7 +17,7 @@ export function safeImage(value) {
   if (value === k5BrakeCase.thumbnail_url) return value;
   if (value === tireValveCase.thumbnail_url || tireValveCase.images.includes(value)) return value;
   if (value === konaBatteryCase.thumbnail_url || konaBatteryCase.images.includes(value)) return value;
-  if (value === airconArticle.thumbnail_url || tireCareArticles.some(article => article.thumbnail_url === value)) return value;
+  if (value === airconArticle.thumbnail_url || linkedCareArticles.some(article => article.thumbnail_url === value)) return value;
   try { const u = new URL(value); return u.protocol === 'https:' ? u.href : ''; } catch { return /^\/board-images\/[a-z0-9-]+\.svg$/.test(value || '') ? value : ''; }
 }
 export function boardRoute(path) {
@@ -25,7 +25,7 @@ export function boardRoute(path) {
   const category = Object.keys(categories).find(k => categories[k].path === parts[0]);
   return category ? { category, slug: parts[1] || '', invalid: parts.length > 2 } : parts[0] === 'faq' ? { faq: true, invalid: parts.length > 1 } : parts[0] === 'admin' ? { admin: true } : null;
 }
-export const postUrl = p => tireCareArticles.includes(p) ? `/blog/${p.slug}/` : `/${categories[p.category].path}/${encodeURIComponent(p.slug)}/`;
+export const postUrl = p => linkedCareArticles.includes(p) ? `/blog/${p.slug}/` : `/${categories[p.category].path}/${encodeURIComponent(p.slug)}/`;
 export const dateLabel = value => value ? new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(value)) : '';
 export function boardTabs(active) {
   return `<nav class="board-tabs" aria-label="자동차관리 콘텐츠">${Object.entries(categories).map(([k, c]) => `<a href="/${c.path}/" ${k === active ? 'aria-current="page"' : ''}>${c.title}</a>`).join('')}<a href="/faq/" ${active === 'faq' ? 'aria-current="page"' : ''}>FAQ</a></nav>`;

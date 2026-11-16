@@ -24,10 +24,20 @@ export const tireCareArticles = [
   },
 ];
 
+export const transmissionCareArticle = {
+  category: 'automotive-care', slug: 'transmission-oil-exchange',
+  title: '미션오일, 어떻게 교환할까요? 순환식 교환 7단계',
+  summary: '오토 힐러 장비를 사용한 순환식 미션오일 교환 과정과 차량별 교환주기를 살펴봅니다.',
+  content: '자동변속기 오일 미션오일 순환식 교환',
+  thumbnail_url: '/board-images/transmission-care.webp',
+};
+
+export const linkedCareArticles = [...tireCareArticles, transmissionCareArticle];
+
 export function withLocalCareArticles(posts = []) {
-  const managedPosts = posts.filter(p => p.slug !== airconArticle.slug && !tireCareArticles.some(article => article.slug === p.slug));
+  const managedPosts = posts.filter(p => p.slug !== airconArticle.slug && !linkedCareArticles.some(article => article.slug === p.slug));
   const pressureIndex = managedPosts.findIndex(p => p.slug === 'tire-pressure');
   const insertAt = pressureIndex === -1 ? managedPosts.length : pressureIndex + 1;
-  managedPosts.splice(insertAt, 0, ...tireCareArticles);
+  managedPosts.splice(insertAt, 0, ...linkedCareArticles);
   return [airconArticle, ...managedPosts];
 }
