@@ -22,6 +22,7 @@ export default defineConfig({
         boardFaq: resolve(import.meta.dirname, 'faq/index.html'),
         boardAdmin: resolve(import.meta.dirname, 'admin/index.html'),
         blog: resolve(import.meta.dirname, 'blog/index.html'),
+        transmissionExchange: resolve(import.meta.dirname, './blog/transmission-oil-exchange/index.html'),
         winterCoolant: resolve(import.meta.dirname, './blog/winter-coolant/index.html'),
         brakePadDisc: resolve(import.meta.dirname, './blog/brake-pad-disc-replacement/index.html'),
         tireReplacement: resolve(import.meta.dirname, 'blog/tire-replacement/index.html'),
