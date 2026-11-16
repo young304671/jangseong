@@ -76,6 +76,7 @@ const serviceIllustration=(id)=>{
 const serviceCards=(items)=>`<div class="service-grid home-service-grid">${items.map(s=>`<article><div class="service-icon" aria-hidden="true">${serviceIllustration(s[0])}</div><p class="num">${String(serviceCatalog.indexOf(s)+1).padStart(2,"0")}</p><h3>${s[1]}</h3><p class="service-description">${s[2]}</p><a href="/services/#${s[0]}" aria-label="${s[1]} 자세히 보기">자세히 보기 →</a></article>`).join('')}</div>`;
 const serviceOverview=()=>serviceGroups.map(group=>`<div class="service-group" aria-labelledby="${group.id}-title"><div class="service-group-heading"><h2 id="${group.id}-title">${group.title}</h2><p>${group.description}</p></div>${serviceCards(group.services)}</div>`).join('');
 const serviceRelatedPosts = {
+  'transmission-oil': { title: '미션오일 관련 글', html: '<p>순환식 미션오일 교환 7단계와 차량별 교환주기를 알아보세요.</p><a href="/blog/transmission-oil-exchange/">미션오일 교환 관련 글 보기 →</a>' },
   oil: { title: '엔진오일 관련 글', html: '<p>교환 시기와 기본점검 내용을 확인해 보세요.</p><a href="/blog/engine-oil-change-interval/">엔진오일 교환 시기 알아보기 →</a><p><a href="/blog/engine-oil-basic-check/">엔진오일과 기본점검 알아보기 →</a></p>' },
   brake: { title: '브레이크 관련 글', html: '<p>제동할 때 긁는 소리와 핸들 떨림이 있었던 차량의 실제 작업을 살펴보세요.</p><a href="/blog/brake-pad-disc-replacement/">브레이크 관련 글보기 →</a>' },
   battery: { title: '배터리 관련 글', html: '<p>시동이 걸려도 배터리 상태를 점검해야 할까요?</p><a href="/blog/battery-check/">배터리 관련 글 보기 →</a>' },
