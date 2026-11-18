@@ -3,11 +3,12 @@ import { k5CoolantCase } from './k5-coolant-case.js';
 import { k5BrakeCase } from './k5-brake-case.js';
 import { tireValveCase } from './tire-valve-case.js';
 import { konaBatteryCase, withLocalRepairCases } from './kona-battery-case.js';
-import { transmissionCareArticle, withLocalCareArticles } from './local-care-articles.js';
+import { transmissionCareArticle, alignmentCareArticle, withLocalCareArticles } from './local-care-articles.js';
 import { createClient } from '@supabase/supabase-js';
 import { categories, postCards, faqHtml, postUrl, safeImage } from './board-shared.js';
 export const supabase = import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ? createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) : null;
 export async function getBoardData(route) {
+  if (route.category === 'automotive-care' && route.slug === alignmentCareArticle.slug) return { post: alignmentCareArticle };
   if (route.category === 'automotive-care' && route.slug === transmissionCareArticle.slug) return { post: transmissionCareArticle };
   if (route.category === 'news' && route.slug === wallStory.slug) return { post: wallStory };
   if (route.category === 'news' && route.slug === winterInspectionNews.slug) return { post: winterInspectionNews };

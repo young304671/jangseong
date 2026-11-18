@@ -39,7 +39,25 @@ export const transmissionCareArticle = {
   thumbnail_url: '/board-images/transmission-care.webp',
 };
 
-export const linkedCareArticles = [...tireCareArticles, transmissionCareArticle];
+
+export const alignmentCareArticle = {
+  category: 'automotive-care', slug: 'wheel-alignment',
+  title: '차가 한쪽으로 쏠린다면? 휠 얼라인먼트 점검 안내',
+  summary: '차량 쏠림과 타이어 편마모, 핸들 중심이 맞지 않을 때 확인할 점을 알아봅니다.',
+  content: [
+    '## 이런 변화가 있다면 점검해 보세요',
+    '평탄한 도로에서 차가 계속 한쪽으로 쏠리거나, 타이어 안쪽 또는 바깥쪽만 유난히 닳거나, 직진할 때 핸들 중심이 맞지 않는다면 점검이 필요할 수 있습니다.',
+    '## 바퀴 정렬과 주변 상태를 함께 확인합니다',
+    '휠 얼라인먼트는 바퀴의 정렬 각도를 측정하고 차량에 맞는 기준으로 조정하는 작업입니다. 쏠림과 편마모는 타이어 공기압이나 조향·서스펜션 상태 등에서도 영향을 받으므로 원인을 함께 살펴봅니다.',
+    '## 타이어가 심하게 닳았다면',
+    '교체가 필요할 정도로 마모된 타이어는 먼저 교체한 뒤 휠 얼라인먼트를 점검·조정하는 것이 좋습니다. 이미 생긴 마모는 얼라인먼트를 조정해도 원래 상태로 돌아오지 않습니다.',
+    '## 방문할 때 알려주세요',
+    '어떤 상황에서 쏠림이 느껴지는지, 타이어 어느 부분이 닳았는지, 최근 연석 등에 충격을 받은 적이 있는지 알려주시면 점검에 도움이 됩니다.',
+  ].join('\n\n'),
+  thumbnail_url: '/board-images/alignment-care.webp',
+};
+
+export const linkedCareArticles = [...tireCareArticles, transmissionCareArticle, alignmentCareArticle];
 
 export function withLocalCareArticles(posts = []) {
   const managedPosts = posts.filter(p => p.slug !== airconArticle.slug && !linkedCareArticles.some(article => article.slug === p.slug));

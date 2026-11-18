@@ -21,6 +21,7 @@ export default defineConfig({
         boardNews: resolve(import.meta.dirname, 'news/index.html'),
         boardFaq: resolve(import.meta.dirname, 'faq/index.html'),
         boardAdmin: resolve(import.meta.dirname, 'admin/index.html'),
+        wheelAlignment: resolve(import.meta.dirname, 'blog/wheel-alignment/index.html'),
         blog: resolve(import.meta.dirname, 'blog/index.html'),
         transmissionExchange: resolve(import.meta.dirname, './blog/transmission-oil-exchange/index.html'),
         winterCoolant: resolve(import.meta.dirname, './blog/winter-coolant/index.html'),
